@@ -1,0 +1,28 @@
+div#searchbar {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	margin: 0 10px;
+}
+
+div#searchbar input {
+	padding: 8px;
+	border: 1px solid black;
+}
+
+div#searchbar input[type="submit"] {
+	aspect-ratio: 1;
+	background-color: rgba(25, 19, 138, 1);
+	color: white;
+	width: 40px;
+	cursor: pointer;
+}
+
+div#searchbar input:first-child {
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
+}
+div#searchbar input:last-child {
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}

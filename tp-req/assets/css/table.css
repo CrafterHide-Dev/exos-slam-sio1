@@ -1,0 +1,38 @@
+div.table {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid rgba(25, 19, 138, 1);
+	margin: 0 30px;
+}
+
+div.table div.row {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	color: white;
+}
+div.table div.row:nth-child(odd) {
+	background-color: rgba(255, 255, 255, 0.05);
+}
+div.table div.row:nth-child(even) {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+div.table div.row:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+div.table div.row.header {
+	background-color: rgba(25, 19, 138, 1);
+	color: white;
+}
+
+div.table div.box {
+	padding: 8px;
+	flex-basis: 0;
+	flex-grow: 2;
+}
+div.table div.box.semi {
+	flex-grow: 1;
+}
+div.table div.box.double {
+	flex-grow: 4;
+}

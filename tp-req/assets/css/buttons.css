@@ -1,0 +1,15 @@
+a.btn {
+	margin: 2px;
+	padding: 10px;
+	text-decoration-line: none;
+	background-color: rgba(25, 19, 138, 1);
+	color: white;
+
+	transition: background 0.1s;
+}
+
+a.btn:hover {
+	background-color: rgba(25, 19, 138, 0.8);
+
+	transition: background 0.1s;
+}
