@@ -99,13 +99,24 @@ var_dump($_POST);
 		if ($_POST['q4'] == "255.255.255.192") {
 			$pointsq4++;
 		}
+
+		$totalScore = $pointsq1+$pointsq2+$pointsq3+$pointsq4;
+
 		?>
 
 		<p>Vous avez <?= $pointsq4; ?>/1.</p>
 
 		<p style="font-weight: 900;">Total :</p>
 
-		<p>Vous avez <?= $pointsq1+$pointsq2+$pointsq3+$pointsq4 ?>/12</p>
+		<p>Vous avez <?= $totalScore; ?>/12</p>
+
+		<?php
+
+		$mysqli = new mysqli('localhost', 'root', '', 'qcm-reseau');
+
+		$req = $mysqli->query('INSERT INTO results VALUES ('.time().', '.$totalScore.')');
+
+		?>
 
 	</body>
 </html>
