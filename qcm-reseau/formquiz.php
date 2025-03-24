@@ -1,3 +1,11 @@
+<?php
+
+$mysqli = new mysqli('localhost', 'root', '', 'qcm-reseau');
+
+$scores = $mysqli->query("SELECT * FROM results ORDER BY id DESC");
+
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -88,5 +96,22 @@
 				<input type="submit" name="quizsubmit" value="Valider">
 			</div>
 		</form>
+		<br>
+		<table>
+			<tr>
+				<th>Score</th>
+				<th>Date</th>
+			</tr>
+			<?php
+			foreach ($scores->fetch_all() as $score) {
+			?>
+			<tr>
+				<td><?= $score['result_score']; ?></td>
+				<td><?= date($score['result_date'], 'd/m/Y H:i:s'); ?></td>
+			</tr>
+			<?php
+			}
+			?>
+		</table>
 	</body>
 </html>
