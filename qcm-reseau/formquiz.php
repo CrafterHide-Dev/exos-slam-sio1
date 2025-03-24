@@ -103,11 +103,11 @@ $scores = $mysqli->query("SELECT * FROM results ORDER BY id DESC");
 				<th>Date</th>
 			</tr>
 			<?php
-			foreach ($scores->fetch_all() as $score) {
+			foreach ($scores->fetch_all(MYSQLI_ASSOC) as $score) {
 			?>
 			<tr>
 				<td><?= $score['result_score']; ?></td>
-				<td><?= date($score['result_date'], 'd/m/Y H:i:s'); ?></td>
+				<td><?= date('d/m/Y H:i:s', $score['result_date']); ?></td>
 			</tr>
 			<?php
 			}

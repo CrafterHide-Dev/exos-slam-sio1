@@ -5,8 +5,6 @@ if (!isset($_POST['quizsubmit']) OR empty($_POST['quizsubmit'])) {
 	exit;
 }
 
-var_dump($_POST);
-
 ?>
 
 <!DOCTYPE html>
@@ -96,7 +94,7 @@ var_dump($_POST);
 
 		<?php
 		$pointsq4 = 0;
-		if ($_POST['q4'] == "255.255.255.192") {
+		if ($_POST['q4'] == "5") {
 			$pointsq4++;
 		}
 
@@ -114,7 +112,7 @@ var_dump($_POST);
 
 		$mysqli = new mysqli('localhost', 'root', '', 'qcm-reseau');
 
-		$req = $mysqli->query('INSERT INTO results VALUES ('.time().', '.$totalScore.')');
+		$req = $mysqli->query('INSERT INTO results (result_date, result_score) VALUES ('.time().', '.$totalScore.')');
 
 		?>
 
